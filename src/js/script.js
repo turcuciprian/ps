@@ -20,7 +20,6 @@
         $scope.scrollToTopOne = '';
         $scope.socialIconsOne = '';
         $scope.magnificPopupOne = '';
-        $scope.regenerateThumbnailsAdvanced = '';
 
         var abUrl = String(document.location.href);
 
@@ -36,20 +35,18 @@
           $scope.scrollToTopOne = '.....';
           $scope.socialIconsOne = '.....';
           $scope.magnificPopupOne = '.....';
-            $scope.regenerateThumbnailsAdvanced = '.....';
             $http({
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                url: $scope.rootPath + '/wp-json/ab/getAdminStatus',
+                url: $scope.rootPath + '/wp-json/plugins/stats',
             }).then(function successCallback(response) {
 
               $scope.signatureOne = response.data.signatureOne;
               $scope.scrollToTopOne = response.data.scrollToTopOne;
               $scope.socialIconsOne = response.data.socialIconsOne;
               $scope.magnificPopupOne = response.data.magnificPopupOne;
-              $scope.regenerateThumbnailsAdvanced = response.data.regenerateThumbnailsAdvanced;
                 //generate charts
 
             }, function errorCallback(response) {
