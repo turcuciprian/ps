@@ -20,6 +20,8 @@
         $scope.scrollToTopOne = '';
         $scope.socialIconsOne = '';
         $scope.magnificPopupOne = '';
+        $scope.countdownTimerOne = '';
+        $scope.giveABeerOne = '';
 
         var abUrl = String(document.location.href);
 
@@ -35,6 +37,8 @@
           $scope.scrollToTopOne = '.....';
           $scope.socialIconsOne = '.....';
           $scope.magnificPopupOne = '.....';
+          $scope.countdownTimerOne = '.....';
+          $scope.giveABeerOne = '.....';
             $http({
                 method: 'GET',
                 headers: {
@@ -47,6 +51,8 @@
               $scope.scrollToTopOne = response.data.scrollToTopOne;
               $scope.socialIconsOne = response.data.socialIconsOne;
               $scope.magnificPopupOne = response.data.magnificPopupOne;
+              $scope.countdownTimerOne = response.data.countdownTimerOne;
+              $scope.giveABeerOne = response.data.giveABeerOne;
                 //generate charts
 
             }, function errorCallback(response) {
