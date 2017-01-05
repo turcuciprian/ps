@@ -22,6 +22,7 @@
         $scope.magnificPopupOne = '';
         $scope.countdownTimerOne = '';
         $scope.giveABeerOne = '';
+        $scope.regenerateThumbnailsAdvanced = '';
         $scope.total = '';
 
         var abUrl = String(document.location.href);
@@ -40,6 +41,7 @@
           $scope.magnificPopupOne = '.....';
           $scope.countdownTimerOne = '.....';
           $scope.giveABeerOne = '.....';
+          $scope.regenerateThumbnailsAdvanced = '.....';
           $scope.total = '.....';
             $http({
                 method: 'GET',
@@ -55,12 +57,14 @@
               $scope.magnificPopupOne = response.data.magnificPopupOne;
               $scope.countdownTimerOne = response.data.countdownTimerOne;
               $scope.giveABeerOne = response.data.giveABeerOne;
+              $scope.regenerateThumbnailsAdvanced = response.data.regenerateThumbnailsAdvanced;
               $scope.total = $scope.signatureOne+
               $scope.scrollToTopOne+
               $scope.socialIconsOne+
               $scope.magnificPopupOne+
               $scope.countdownTimerOne+
-              $scope.giveABeerOne;
+              $scope.giveABeerOne+
+              $scope.regenerateThumbnailsAdvanced;
                 //generate charts
 
             }, function errorCallback(response) {
