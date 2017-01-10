@@ -16,14 +16,7 @@
         if (debug) {
             console.log('inside controller');
         }
-        $scope.signatureOne = '';
-        $scope.scrollToTopOne = '';
-        $scope.socialIconsOne = '';
-        $scope.magnificPopupOne = '';
         $scope.countdownTimerOne = '';
-        $scope.giveABeerOne = '';
-        $scope.regenerateThumbnailsAdvanced = '';
-        $scope.total = '';
 
         var abUrl = String(document.location.href);
 
@@ -35,14 +28,8 @@
         }
         $scope.updatePage = function() {
 
-          $scope.signatureOne = '.....';
-          $scope.scrollToTopOne = '.....';
-          $scope.socialIconsOne = '.....';
-          $scope.magnificPopupOne = '.....';
-          $scope.countdownTimerOne = '.....';
-          $scope.giveABeerOne = '.....';
-          $scope.regenerateThumbnailsAdvanced = '.....';
-          $scope.total = '.....';
+          $scope.downloaded = '...';
+          $scope.active = '...';
             $http({
                 method: 'GET',
                 headers: {
@@ -51,20 +38,8 @@
                 url: $scope.rootPath + '/wp-json/plugins/stats',
             }).then(function successCallback(response) {
 
-              $scope.signatureOne = response.data.signatureOne;
-              $scope.scrollToTopOne = response.data.scrollToTopOne;
-              $scope.socialIconsOne = response.data.socialIconsOne;
-              $scope.magnificPopupOne = response.data.magnificPopupOne;
-              $scope.countdownTimerOne = response.data.countdownTimerOne;
-              $scope.giveABeerOne = response.data.giveABeerOne;
-              $scope.regenerateThumbnailsAdvanced = response.data.regenerateThumbnailsAdvanced;
-              $scope.total = $scope.signatureOne+
-              $scope.scrollToTopOne+
-              $scope.socialIconsOne+
-              $scope.magnificPopupOne+
-              $scope.countdownTimerOne+
-              $scope.giveABeerOne+
-              $scope.regenerateThumbnailsAdvanced;
+              $scope.downloaded = response.data.countdownTimerOne.downloaded;
+              $scope.active = response.data.countdownTimerOne.active;
                 //generate charts
 
             }, function errorCallback(response) {
