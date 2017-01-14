@@ -28,8 +28,13 @@
         }
         $scope.updatePage = function() {
 
-          $scope.downloaded = '...';
-          $scope.active = '...';
+          $scope.ctoTotal = '...';
+          $scope.ctoActive = '...';
+          $scope.rtaTotal = '...';
+          $scope.rtaActive = '...';
+
+          $scope.totalDownloads = '...';
+          $scope.totalActive = '...';
             $http({
                 method: 'GET',
                 headers: {
@@ -38,8 +43,13 @@
                 url: $scope.rootPath + '/wp-json/plugins/stats',
             }).then(function successCallback(response) {
 
-              $scope.downloaded = response.data.countdownTimerOne.downloaded;
-              $scope.active = response.data.countdownTimerOne.active;
+              $scope.ctoTotal = response.data.cto.downloaded;
+              $scope.ctoActive = response.data.cto.active;
+              $scope.rtaTotal = response.data.rta.downloaded;
+              $scope.rtaActive = response.data.rta.active;
+
+              $scope.totalDownloads = $scope.ctoTotal + $scope.rtaTotal;
+              $scope.totalActive = $scope.ctoActive + $scope.rtaActive;
                 //generate charts
 
             }, function errorCallback(response) {
